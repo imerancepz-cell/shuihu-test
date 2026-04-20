@@ -430,9 +430,11 @@ h3 {
   color: var(--muted);
 }
 
-.related-card .similarity {
-  font-size: 14px;
-  font-weight: 600;
+.related-card .relation-desc {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .similar-card .similarity { color: var(--green); }

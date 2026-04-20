@@ -58,15 +58,6 @@
     if (answerHint) answerHint.textContent = msg;
   }
 
-  function shuffleOptions(options) {
-    const arr = options.slice();
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  }
-
   function updateProgress() {
     const total = questions.length;
     const current = state.currentQuestionIndex + 1;
@@ -83,8 +74,8 @@
     questionText.textContent = "请选择一个最接近你的答案。";
     optionsList.innerHTML = "";
 
-    const shuffled = shuffleOptions(q.options);
-    shuffled.forEach((opt) => {
+    // 选项顺序固定，不再打乱
+    q.options.forEach((opt) => {
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "option-button";
@@ -261,14 +252,14 @@
     // 雷达图与维度分数
     renderScoreSummary(state.latestResult.normalizedScores);
 
-    // 相关人物
+    // 相关人物（使用详细描述）
     renderRelatedCharacters(primaryText.relatedCharacters, primaryMatch.similarity);
   }
 
   function renderEmptyResult() {
     document.getElementById("primaryResult").innerHTML = `
       <h2>还没有测试结果</h2>
-      <p class="result-subtitle">完成 60 道题后，这里会显示你的水浒人物结果。</p>
+      <p class="result-subtitle">完成 40 道题后，这里会显示你的水浒人物结果。</p>
     `;
   }
 
@@ -288,14 +279,13 @@
       .join("");
 
     container.innerHTML = `
-      <h3>十维倾向</h3>
+      <h3>六维倾向</h3>
       <div id="radarChartContainer">
         <canvas id="radarChart" width="400" height="400"></canvas>
       </div>
       <div class="score-list">${scoreListHtml}</div>
     `;
 
-    // 重绘雷达图
     drawRadarChart(normScores);
   }
 
@@ -364,13 +354,13 @@
 
     // 标签
     ctx.fillStyle = "#3d3530";
-    ctx.font = "13px system-ui, sans-serif";
+    ctx.font = "14px system-ui, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     dims.forEach((d, i) => {
       const a = i * angleStep - Math.PI / 2;
-      const lx = cx + (maxR + 28) * Math.cos(a);
-      const ly = cy + (maxR + 28) * Math.sin(a);
+      const lx = cx + (maxR + 30) * Math.cos(a);
+      const ly = cy + (maxR + 30) * Math.sin(a);
       ctx.fillText(labels[i], lx, ly);
     });
   }
@@ -386,29 +376,26 @@
       <div class="related-grid">
         <div class="related-card similar-card">
           <h4>相近人物</h4>
-          <p class="relation-type">性格相似，路线相近</p>
           ${similarCh ? `
             <p class="character-name">${similarCh.name}</p>
             <p class="character-nickname">${similarCh.nickname}</p>
-            <p class="similarity">≈ ${Math.max(5, primarySim - 3)}% 相似</p>
+            <p class="relation-desc">${related.similarDesc || ''}</p>
           ` : `<p class="character-name">暂无</p>`}
         </div>
         <div class="related-card complementary-card">
           <h4>互补人物</h4>
-          <p class="relation-type">能力互补，合作潜力大</p>
           ${compCh ? `
             <p class="character-name">${compCh.name}</p>
             <p class="character-nickname">${compCh.nickname}</p>
-            <p class="similarity">互补型</p>
+            <p class="relation-desc">${related.complementaryDesc || ''}</p>
           ` : `<p class="character-name">暂无</p>`}
         </div>
         <div class="related-card opposing-card">
           <h4>对立人物</h4>
-          <p class="relation-type">性格相反，或有冲突</p>
           ${oppCh ? `
             <p class="character-name">${oppCh.name}</p>
             <p class="character-nickname">${oppCh.nickname}</p>
-            <p class="similarity">对立型</p>
+            <p class="relation-desc">${related.opposingDesc || ''}</p>
           ` : `<p class="character-name">暂无</p>`}
         </div>
       </div>
@@ -424,7 +411,8 @@
     const resultText = getResultText(primaryMatch.character.id);
     const summary = resultText.shareText || results.RESULT_SHARE_TEMPLATE
       .replace("{name}", primaryMatch.character.name)
-      .replace("{nickname}", primaryMatch.character.nickname);
+      .replace("{nickname}", primaryMatch.character.nickname)
+      .replace("{subtitle}", resultText.subtitle);
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(summary).then(
@@ -455,8 +443,8 @@
     if (!data || !results || !scoring) {
       throw new Error("水浒页面依赖数据未正确加载。");
     }
-    if (!Array.isArray(questions) || questions.length !== 60) {
-      throw new Error(`题库数量异常：期望60，实际${questions.length}。`);
+    if (!Array.isArray(questions) || questions.length !== 40) {
+      throw new Error(`题库数量异常：期望40，实际${questions.length}。`);
     }
     if (typeof scoring.calculateResult !== "function") {
       throw new Error("评分函数 calculateResult 不存在。");
