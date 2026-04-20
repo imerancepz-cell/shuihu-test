@@ -1,4 +1,4 @@
-const RESULT_SHARE_TEMPLATE = "我在水浒人格测试里匹配到了{name}（{nickname}），{subtitle}。你也来测测看：https://imerance123.github.io/shuihu-test/";
+const RESULT_SHARE_TEMPLATE = "我在水浒人格测试里匹配到了{name}（{nickname}），{subtitle}。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/";
 
 const DIMENSION_LABELS = {
   loyalty: "忠义",
@@ -44,7 +44,7 @@ const RESULT_TEXTS = [
       opposing: "dong_ping",
       opposingDesc: "你看重道义和长期信任，他看重效率和当下收益。你做决定会先想这样做对不对，他做决定会先想这样做有没有用。在需要原则的场合，你会成为他的刹车；在需要变通的场合，他会觉得你太过迂腐。"
     },
-    shareText: "我在水浒人格测试里匹配到了宋江（及时雨），忠义凝聚型领袖。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了宋江（及时雨），忠义凝聚型领袖。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "lu_junyi",
@@ -80,7 +80,7 @@ const RESULT_TEXTS = [
       opposing: "shi_qian",
       opposingDesc: "你做事讲究光明正大，他做事讲究灵活变通甚至不择手段。你会觉得他的方法不够体面，他会觉得你太过刻板。在需要用非常规手段的场合，你们会产生明显的分歧。"
     },
-    shareText: "我在水浒人格测试里匹配到了卢俊义（玉麒麟），威望稳重型统帅。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了卢俊义（玉麒麟），威望稳重型统帅。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "wu_yong",
@@ -116,7 +116,7 @@ const RESULT_TEXTS = [
       opposing: "li_kui",
       opposingDesc: "你做事讲究谋定后动，他做事讲究先干再说。你会觉得他太冲动、太容易被情绪带着走；他会觉得你太磨叽、太不够痛快。在需要快速反应的场合，他的直觉可能比你的分析更有效；在需要周密布局的场合，你的筹划是必不可少的。"
     },
-    shareText: "我在水浒人格测试里匹配到了吴用（智多星），智谋筹划型军师。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了吴用（智多星），智谋筹划型军师。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "gongsun_sheng",
@@ -152,7 +152,7 @@ const RESULT_TEXTS = [
       opposing: "qin_ming",
       opposingDesc: "他做事讲究快准狠，你做事讲究顺势而为。他会觉得你太过磨叽、不够果断；你会觉得他太过冲动、不够周全。在需要快速反应的场合，他的风格更有效；在需要审时度势的场合，你的方式更稳健。"
     },
-    shareText: "我在水浒人格测试里匹配到了公孙胜（入云龙），超脱淡泊型隐士。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了公孙胜（入云龙），超脱淡泊型隐士。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "guan_sheng",
@@ -188,7 +188,7 @@ const RESULT_TEXTS = [
       opposing: "shi_qian",
       opposingDesc: "你做事讲究光明正大，他做事讲究灵活变通甚至不择手段。你会觉得他的方法不够体面，有辱门风；他会觉得你太过刻板，不懂得因地制宜。在需要非常规手段的场合，你们的冲突会很尖锐。"
     },
-    shareText: "我在水浒人格测试里匹配到了关胜（大刀），威严正统型猛将。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了关胜（大刀），威严正统型猛将。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "lin_chong",
@@ -224,7 +224,7 @@ const RESULT_TEXTS = [
       opposing: "dong_ping",
       opposingDesc: "你做事讲究先忍后动、有理有节，他做事讲究快刀斩乱麻、不择手段。你会觉得他太过功利、没有底线；他会觉得你太过隐忍、错失良机。在需要选择的关口，你们的判断会很不相同。"
     },
-    shareText: "我在水浒人格测试里匹配到了林冲（豹子头），隐忍刚烈型武将。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了林冲（豹子头），隐忍刚烈型武将。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "qin_ming",
@@ -260,7 +260,7 @@ const RESULT_TEXTS = [
       opposing: "gongsun_sheng",
       opposingDesc: "他做事讲究审时度势、顺势而为，你做事讲究一鼓作气、速战速决。他会觉得你太过冲动、不懂得等待时机；你会觉得他太过磨叽、不够果断。你们的节奏感很不相同，需要协调。"
     },
-    shareText: "我在水浒人格测试里匹配到了秦明（霹雳火），刚烈暴躁型先锋。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了秦明（霹雳火），刚烈暴躁型先锋。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "hua_rong",
@@ -296,7 +296,7 @@ const RESULT_TEXTS = [
       opposing: "shi_qian",
       opposingDesc: "你做事讲究正大光明、有章法，他做事讲究灵活变通、不拘一格。你会觉得他的方法不够体面、不够可靠；他会觉得你太过刻板、不够灵活。在需要非常规手段的场合，你们的判断会不一样。"
     },
-    shareText: "我在水浒人格测试里匹配到了花荣（小李广），忠诚优雅型将领。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了花荣（小李广），忠诚优雅型将领。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "chai_jin",
@@ -332,7 +332,7 @@ const RESULT_TEXTS = [
       opposing: "dong_ping",
       opposingDesc: "你做事讲究道义和长远，他做事讲究效率和当下。你会觉得他太过功利、缺乏格局；他会觉得你太过理想、不懂现实。在需要选择的关口，你们的判断会很不相同。"
     },
-    shareText: "我在水浒人格测试里匹配到了柴进（小旋风），仗义疏财型贵族。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了柴进（小旋风），仗义疏财型贵族。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "lu_zhishen",
@@ -368,7 +368,7 @@ const RESULT_TEXTS = [
       opposing: "dong_ping",
       opposingDesc: "你做事讲究道义和本能反应，他做事讲究利弊和效率计算。你会觉得他太过功利、没有底线；他会觉得你太过冲动、不懂算计。在需要选择的关口，你们的判断完全不同。"
     },
-    shareText: "我在水浒人格测试里匹配到了鲁智深（花和尚），豪爽正义型好汉。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了鲁智深（花和尚），豪爽正义型好汉。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "wu_song",
@@ -404,7 +404,7 @@ const RESULT_TEXTS = [
       opposing: "shi_qian",
       opposingDesc: "你做事讲究正大光明、一力降十会，他做事讲究灵活变通、走捷径。你会觉得他的方法不够光明正大，他会觉得你太过刚直、不懂变通。在需要非常规手段的场合，你们的方式完全不同。"
     },
-    shareText: "我在水浒人格测试里匹配到了武松（行者），刚烈果敢型英雄。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了武松（行者），刚烈果敢型英雄。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "dong_ping",
@@ -440,7 +440,7 @@ const RESULT_TEXTS = [
       opposing: "lin_chong",
       opposingDesc: "你做事讲究效率和结果，他做事讲究先忍后动、有理有节。你会觉得他太过隐忍、错失良机；他会觉得你太过功利、没有底线。在需要选择的关口，你们的判断完全不同。"
     },
-    shareText: "我在水浒人格测试里匹配到了董平（双枪将），野心果决型将领。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了董平（双枪将），野心果决型将领。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "yang_zhi",
@@ -476,7 +476,7 @@ const RESULT_TEXTS = [
       opposing: "ruan_xiaoqi",
       opposingDesc: "你总想往上走、改变命运，他更享受当下、不在乎功名。你会觉得他太过随性、不思进取；他会觉得你太过执着、活得太累。你们对人生的优先级判断很不一样。"
     },
-    shareText: "我在水浒人格测试里匹配到了杨志（青面兽），志高运蹇型英雄。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了杨志（青面兽），志高运蹇型英雄。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "dai_zong",
@@ -512,7 +512,7 @@ const RESULT_TEXTS = [
       opposing: "gongsun_sheng",
       opposingDesc: "你讲究效率和响应速度，他讲究审时度势和等待时机。你会觉得他太过磨叽、不够积极；他会觉得你太过忙碌、不懂得停下思考。你们的节奏感很不一样。"
     },
-    shareText: "我在水浒人格测试里匹配到了戴宗（神行太保），机敏务实型执行者。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了戴宗（神行太保），机敏务实型执行者。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "li_kui",
@@ -548,7 +548,7 @@ const RESULT_TEXTS = [
       opposing: "wu_yong",
       opposingDesc: "你做事讲究直觉和冲动，他做事讲究谋划和分析。你会觉得他太磨叽、不够痛快；他会觉得你太冲动、需要被引导。在需要快速反应的场合，你的直觉可能比他的分析更有效；在需要周密布局的场合，他的谋划是必不可少的。"
     },
-    shareText: "我在水浒人格测试里匹配到了李逵（黑旋风），粗犷直率型猛将。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了李逵（黑旋风），粗犷直率型猛将。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "shi_jin",
@@ -584,7 +584,7 @@ const RESULT_TEXTS = [
       opposing: "gongsun_sheng",
       opposingDesc: "你讲究冲动和热情，他讲究审时度和等待。你会觉得他太冷淡、不够热血；他会觉得你太冲动、不够沉稳。你们的节奏感很不一样，需要协调才能配合。"
     },
-    shareText: "我在水浒人格测试里匹配到了史进（九纹龙），热血少年型好汉。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了史进（九纹龙），热血少年型好汉。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "shi_xiu",
@@ -620,7 +620,7 @@ const RESULT_TEXTS = [
       opposing: "dong_ping",
       opposingDesc: "你做事讲究揭露真相、不顾情面，他做事讲究结果导向、不惜手段。你会觉得他太过功利、没有底线；他会觉得你太过较真、不懂变通。在需要选择的关口，你们的判断完全不同。"
     },
-    shareText: "我在水浒人格测试里匹配到了石秀（拼命三郎），精明果敢型行动者。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了石秀（拼命三郎），精明果敢型行动者。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "yan_qing",
@@ -656,7 +656,7 @@ const RESULT_TEXTS = [
       opposing: "qin_ming",
       opposingDesc: "你讲究灵活和周旋，他讲究一往无前和速度。你会觉得他太过冲动、不够细腻；他会觉得你太过磨叽、不够果断。你们的节奏感和方式完全不同，需要协调才能配合。"
     },
-    shareText: "我在水浒人格测试里匹配到了燕青（浪子），聪慧灵动型浪子。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了燕青（浪子），聪慧灵动型浪子。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "zhang_shun",
@@ -692,7 +692,7 @@ const RESULT_TEXTS = [
       opposing: "dong_ping",
       opposingDesc: "你讲究义气和专业原则，他讲究效率和结果。你会觉得他太过功利、不讲情义；他会觉得你太过迂腐、不懂变通。在需要选择的关口，你们的判断很不一样。"
     },
-    shareText: "我在水浒人格测试里匹配到了张顺（浪里白条），水上豪杰型义士。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了张顺（浪里白条），水上豪杰型义士。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "ruan_xiaoqi",
@@ -728,7 +728,7 @@ const RESULT_TEXTS = [
       opposing: "guan_sheng",
       opposingDesc: "你讲究自由和随性，他讲究规矩和体面。你会觉得他太过刻板、活得太累；他会觉得你太过随性、不够稳重。你们的价值观和生活方式很不相同。"
     },
-    shareText: "我在水浒人格测试里匹配到了阮小七（活阎罗），豪放不羁型渔民。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了阮小七（活阎罗），豪放不羁型渔民。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "zhu_tong",
@@ -764,7 +764,7 @@ const RESULT_TEXTS = [
       opposing: "li_kui",
       opposingDesc: "你讲究温和和体面，他讲究直率和痛快。你会觉得他太过冲动、不够分寸；他会觉得你太过磨叽、不够爽快。你们的表达方式和节奏感完全不同。"
     },
-    shareText: "我在水浒人格测试里匹配到了朱仝（美髯公），仁义温和型义士。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了朱仝（美髯公），仁义温和型义士。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "li_jun",
@@ -800,7 +800,7 @@ const RESULT_TEXTS = [
       opposing: "hua_rong",
       opposingDesc: "你讲究独立和长远规划，他讲究忠诚和稳定追随。你会觉得他太过依附、没有自己的判断；他会觉得你太过独立、不够忠诚。你们对团队的态度和预期很不一样。"
     },
-    shareText: "我在水浒人格测试里匹配到了李俊（混江龙），自主独立型水上首领。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了李俊（混江龙），自主独立型水上首领。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "lei_heng",
@@ -836,7 +836,7 @@ const RESULT_TEXTS = [
       opposing: "shi_qian",
       opposingDesc: "你讲究规则和正道，他讲究灵活和变通。你会觉得他的方法不够光明正大，他会觉得你太过刻板、不懂变通。在需要非常规手段的场合，你们的判断完全不同。"
     },
-    shareText: "我在水浒人格测试里匹配到了雷横（插翅虎），正直勇猛型都头。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了雷横（插翅虎），正直勇猛型都头。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   },
   {
     characterId: "shi_qian",
@@ -872,7 +872,7 @@ const RESULT_TEXTS = [
       opposing: "guan_sheng",
       opposingDesc: "你讲究灵活和变通，他讲究规矩和正道。你会觉得他太过刻板、不懂变通；他会觉得你的方法不够体面、有辱门风。在需要选择的关口，你们的判断完全相反。"
     },
-    shareText: "我在水浒人格测试里匹配到了时迁（鼓上蚤），灵活机巧型奇才。你也来测测看：https://imerance123.github.io/shuihu-test/"
+    shareText: "我在水浒人格测试里匹配到了时迁（鼓上蚤），灵活机巧型奇才。你也来测测看：https://imerancepz-cell.github.io/shuihu-test/"
   }
 ];
 

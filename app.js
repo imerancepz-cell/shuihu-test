@@ -14,7 +14,7 @@
 
   const startButton = document.getElementById("startButton");
   const prevButton = document.getElementById("prevButton");
-  const nextButton = document.getElementById("nextButton");
+  const submitButton = document.getElementById("submitButton");
   const restartButton = document.getElementById("restartButton");
   const copyResultButton = document.getElementById("copyResultButton");
 
@@ -74,7 +74,6 @@
     questionText.textContent = "请选择一个最接近你的答案。";
     optionsList.innerHTML = "";
 
-    // 选项顺序固定，不再打乱
     q.options.forEach((opt) => {
       const btn = document.createElement("button");
       btn.type = "button";
@@ -88,14 +87,32 @@
     });
 
     prevButton.disabled = state.currentQuestionIndex === 0;
-    nextButton.textContent = state.currentQuestionIndex === questions.length - 1 ? "查看结果" : "下一题";
+
+    const isLastQuestion = state.currentQuestionIndex === questions.length - 1;
+    if (isLastQuestion && selectedKey) {
+      submitButton.style.display = "inline-block";
+    } else {
+      submitButton.style.display = "none";
+    }
   }
 
   function selectAnswer(key) {
     const q = getCurrentQuestion();
     state.answers[q.id] = key;
     clearHint();
+
+    const isLastQuestion = state.currentQuestionIndex === questions.length - 1;
+    if (isLastQuestion) {
+      renderQuestion();
+      return;
+    }
+
     renderQuestion();
+    setTimeout(() => {
+      state.currentQuestionIndex++;
+      clearHint();
+      renderQuestion();
+    }, 300);
   }
 
   function resetQuiz() {
@@ -117,21 +134,6 @@
     state.currentQuestionIndex--;
     clearHint();
     renderQuestion();
-  }
-
-  function goToNext() {
-    const q = getCurrentQuestion();
-    if (!state.answers[q.id]) {
-      setHint("请先选择一个答案。");
-      return;
-    }
-    if (state.currentQuestionIndex < questions.length - 1) {
-      state.currentQuestionIndex++;
-      clearHint();
-      renderQuestion();
-      return;
-    }
-    finishQuiz();
   }
 
   function finishQuiz() {
@@ -174,7 +176,6 @@
     const primaryText = getResultText(primaryMatch.character.id);
     const ch = primaryMatch.character;
 
-    // 主匹配人物
     const primaryResult = document.getElementById("primaryResult");
     primaryResult.innerHTML = `
       <h2>${primaryText.resultTitle}</h2>
@@ -189,14 +190,12 @@
       </div>
     `;
 
-    // 经典语录
     const quoteBlock = document.getElementById("quoteBlock");
     quoteBlock.innerHTML = `
       <h3>经典语录</h3>
       <p class="classical-quote">${primaryText.classicalQuote}</p>
     `;
 
-    // 人物解读
     const resultDesc = document.getElementById("resultDescription");
     resultDesc.innerHTML = `
       <h3>人物解读</h3>
@@ -205,7 +204,6 @@
       </div>
     `;
 
-    // 优势与盲点
     const resultStrengths = document.getElementById("resultStrengths");
     resultStrengths.innerHTML = `
       <h3>优势与盲点</h3>
@@ -225,7 +223,6 @@
       </div>
     `;
 
-    // 团队角色
     const resultRole = document.getElementById("resultRole");
     resultRole.innerHTML = `
       <h3>适合位置与团队角色</h3>
@@ -233,7 +230,6 @@
       <p class="team-role">${primaryText.teamRole}</p>
     `;
 
-    // 成长建议
     const growthAdvice = document.getElementById("growthAdvice");
     growthAdvice.innerHTML = `
       <h3>成长建议</h3>
@@ -242,17 +238,13 @@
       </ul>
     `;
 
-    // 人生启示
     const lifeInsight = document.getElementById("lifeInsight");
     lifeInsight.innerHTML = `
       <h3>人生启示</h3>
       <p class="life-insight">${primaryText.lifeInsight}</p>
     `;
 
-    // 雷达图与维度分数
     renderScoreSummary(state.latestResult.normalizedScores);
-
-    // 相关人物（使用详细描述）
     renderRelatedCharacters(primaryText.relatedCharacters, primaryMatch.similarity);
   }
 
@@ -306,7 +298,6 @@
     const n = dims.length;
     const angleStep = (2 * Math.PI) / n;
 
-    // 背景网格
     ctx.strokeStyle = "#e0ddd8";
     ctx.lineWidth = 1;
     for (let level = 1; level <= 5; level++) {
@@ -323,7 +314,6 @@
       ctx.stroke();
     }
 
-    // 轴线
     dims.forEach((d, i) => {
       const a = i * angleStep - Math.PI / 2;
       const ex = cx + maxR * Math.cos(a);
@@ -334,7 +324,6 @@
       ctx.stroke();
     });
 
-    // 数据多边形
     ctx.fillStyle = "rgba(47, 111, 85, 0.25)";
     ctx.strokeStyle = "#2f6f55";
     ctx.lineWidth = 2;
@@ -352,7 +341,6 @@
     ctx.fill();
     ctx.stroke();
 
-    // 标签
     ctx.fillStyle = "#3d3530";
     ctx.font = "14px system-ui, sans-serif";
     ctx.textAlign = "center";
@@ -427,7 +415,7 @@
   function wireEvents() {
     startButton.addEventListener("click", startQuiz);
     prevButton.addEventListener("click", goToPrev);
-    nextButton.addEventListener("click", goToNext);
+    submitButton.addEventListener("click", finishQuiz);
     restartButton.addEventListener("click", () => {
       resetQuiz();
       showView("home");
@@ -437,7 +425,7 @@
 
   function assertDependencies() {
     const required = [
-      startButton, prevButton, nextButton,
+      startButton, prevButton, submitButton,
       questionProgress, quizTitle, questionText, optionsList, answerHint,
     ];
     if (!data || !results || !scoring) {
